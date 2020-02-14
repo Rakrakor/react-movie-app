@@ -1,0 +1,14 @@
+{
+  "apiUrl": "http://localhost:8080",
+  "login": "http://localhost:8080/login",
+  "signin": "http://localhost:8080/signin",
+  "skills": "http://localhost:8080/user/skills",
+  "offers": "http://localhost:8080/user/offers",
+  "save": "http://localhost:8080/user/saveNewOffer",
+  "update": "http://localhost:8080/user/update",
+  "delete": "http://localhost:8080/user/delete",
+  "userOffers": "http://localhost:8080/user/submittedOffers",
+
+  "general": "http://localhost:8080/admin",
+  "adminOffers": "http://localhost:8080/admin/offers"
+}
