@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const home = props => {
   return <h1>HOME</h1>;

@@ -25,5 +25,29 @@ code {
 }
 
 .bg-light {
-  opacity: 0.9;
+  opacity: 1;
 }
+
+.opaque {
+  opacity: 0.8;
+}
+.nonopaque {
+  opacity: 1;
+}
+
+#cvTitle:hover {
+  text-shadow: 0px 0px 20px black;
+
+  -webkit-transition-property: text-shadow;
+  transition-property: text-shadow;
+
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+/* 
+.developer {
+  background-image: url(./images/background.jpg);
+  background-size: 100%;
+}
+*/

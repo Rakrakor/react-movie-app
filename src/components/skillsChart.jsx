@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import CanvasJSReact from "../library/canvasjs.react";
-import ProgressBar from "./progressBar";
 
 const SkillsChart = props => {
   //var CanvasJSReact = require("./library/canvasjs.react");
@@ -9,27 +8,29 @@ const SkillsChart = props => {
 
   const options = {
     title: {
-      text: "SKills set levels"
+      text: "Areas of experience (%)"
     },
 
     data: [
       {
         type: "column",
         dataPoints: [
-          { label: "React", y: 10 },
-          { label: "Java8", y: 15 },
-          { label: "SpringBoot", y: 25 },
-          { label: "MySql", y: 30 },
-          { label: "SpringSecurity", y: 28 }
+          { label: "Quality Management", y: 80 },
+          { label: "Projet Management", y: 50 },
+          { label: "IT", y: 45 }
         ]
       }
     ]
   };
 
   return (
-    <div>
+    <div
+      className="rounded opaque"
+      style={{ height: "500px", "margin-top": "100px" }}
+    >
       <CanvasJSChart
         options={options}
+
         /* onRef = {ref => this.chart = ref} */
       />
     </div>

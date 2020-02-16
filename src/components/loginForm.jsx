@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Form from "../common/form";
 import Joi from "joi-browser";
 import { login } from "../services/authService";
+import { NavLink } from "react-router-dom";
 
 //ici on ajoute des methodes avec EXTENDS FORM
 class LoginForm extends Form {
@@ -56,6 +57,12 @@ class LoginForm extends Form {
           {this.renderInput("password", "Password", "password")}
           {this.renderButton("Login")}
         </form>
+        <NavLink
+          className="nav-item nav-link justify-content-start font-weight-bold text-white mt-2 pl-0"
+          to="/register"
+        >
+          Register here
+        </NavLink>
       </div>
     );
   }

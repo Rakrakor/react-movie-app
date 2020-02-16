@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import ProgressBar from "./progressBar";
 
-class SkillsSet extends Component {
+class SkillsProject extends Component {
   state = {};
 
   skillsLevels = [
-    { skill: "React", level: "10" },
-    { skill: "Java8", level: "15" },
-    { skill: "SpringBoot", level: "25" },
-    { skill: "MySQL", level: "30" },
-    { skill: "SpringSecurity", level: "28" }
+    { skill: "PMI: Certified Associate in Project Mngt.", level: "30" },
+    { skill: "PRINCE2: Practitioner Project Mngt.", level: "30" }
   ];
 
   render() {
     return (
       <div>
+        <h3 className="font-weight-bold text-white mb-5">Project Management</h3>
         {this.skillsLevels.map(skill => (
           <ProgressBar
             key={skill.skill}
@@ -27,4 +25,4 @@ class SkillsSet extends Component {
   }
 }
 
-export default SkillsSet;
+export default SkillsProject;

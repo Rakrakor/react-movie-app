@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import Welcome from "./components/welcome";
 import RegisterForm from "./components/registerForm";
 import LoginForm from "./components/loginForm";
 import NewMovieForm from "./components/newMovieForm";
@@ -7,7 +8,9 @@ import MovieForm from "./components/movieForm";
 import Movies from "./components/movies";
 import Customers from "./components/customers";
 import Rentals from "./components/rentals";
-import SkillsSet from "./components/skillsSet";
+import SkillsIT from "./components/skillsIT";
+import SkillsProject from "./components/skillsProject";
+import SkillsQuality from "./components/skillsQuality";
 import SkillsChart from "./components/skillsChart";
 import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
@@ -22,6 +25,7 @@ class App extends Component {
 
         <main className="container">
           <Switch>
+            <Route path="/welcome" component={Welcome} />
             <Route path="/movies/new" component={NewMovieForm} />
             <Route path="/movies/:id" component={MovieForm} />
             <Route path="/login" component={LoginForm} />
@@ -30,9 +34,11 @@ class App extends Component {
             <Route path="/customers" component={Customers} />
             <Route path="/rentals" component={Rentals} />
             <Route path="/skillsChart" component={SkillsChart} />
-            <Route path="/skillsSet" component={SkillsSet} />
+            <Route path="/skillsIT" component={SkillsIT} />
+            <Route path="/skillsProject" component={SkillsProject} />
+            <Route path="/skillsQuality" component={SkillsQuality} />
             <Route path="/not-found" component={NotFound} />
-            <Redirect from="/" exact to="/movies" />
+            <Redirect from="/" exact to="/welcome" />
             <Redirect to="not-found" />
           </Switch>
         </main>
