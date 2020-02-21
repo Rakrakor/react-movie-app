@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../common/form";
 import Joi from "joi-browser";
-import { login } from "../services/authService";
+import auth from "../services/authService";
 import { NavLink } from "react-router-dom";
 
 //ici on ajoute des methodes avec EXTENDS FORM
@@ -11,7 +11,7 @@ class LoginForm extends Form {
       //ALWAYS Initialize to an EMPTY STRING or VALUES from SERVER
       //Null or undefined would be an uncontrolled component
       username: "",
-      password: ""
+      userpassword: ""
     },
     errors: {}
   };
@@ -20,7 +20,7 @@ class LoginForm extends Form {
     username: Joi.string()
       .required()
       .label("Username"),
-    password: Joi.string()
+    userpassword: Joi.string()
       .required()
       .label("Password")
   };
@@ -30,14 +30,20 @@ class LoginForm extends Form {
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      const { data: jwt } = await login(data.username, data.password);
-      console.log(jwt);
+      //console.log(await login(data.username, data.userpassword));
+
+      await auth.login(data.username, data.userpassword);
+
       //Every webBrowser have a local storage: ("Key",value)
-      localStorage.setItem("token", jwt);
+
       //*****  call to server  *****
       console.log("Submitted");
       //redirect the user to the home page:
-      this.props.history.push("/");
+      /****  this.props.history.push("/");   */
+      //pb: once logged in. We can still see the login button.
+      //Need to do a full reaload of the APP. ( navBar componentDidMount, happens just once)
+      //We need to reload again:
+      window.location = "/movies";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
@@ -54,7 +60,7 @@ class LoginForm extends Form {
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("username", "Username")}
-          {this.renderInput("password", "Password", "password")}
+          {this.renderInput("userpassword", "Password", "password")}
           {this.renderButton("Login")}
         </form>
         <NavLink

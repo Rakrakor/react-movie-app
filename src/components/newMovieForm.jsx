@@ -88,14 +88,14 @@ class NewMovieForm extends Form {
   render() {
     return (
       <div className="text-white">
-        <h1>New Movie</h1>
+        <h1>New Offer</h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("title", "Title")}
           {this.renderDropDown("genreId", "Genre", this.state.genres)}
           {this.renderInput("numberInStock", "Number in Stock")}
           {this.renderInput("dailyRentalRate", "Rate")}
 
-          {this.renderButton("Save Movie")}
+          {this.renderButton("Save Offer")}
         </form>
       </div>
     );

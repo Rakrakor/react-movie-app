@@ -19,7 +19,7 @@ class SkillsQuality extends Component {
     return (
       <div>
         <h3 className="font-weight-bold text-white mb-5">
-          Quality (Company/System/Software process levels-
+          Quality (Company/System/Software process levels)
         </h3>
         {this.skillsLevels.map(skill => (
           <ProgressBar

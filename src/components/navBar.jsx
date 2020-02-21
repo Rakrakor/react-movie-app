@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 /*NavLink allows to highlight the active class */
 
-class NavBar extends Component {
-  render() {
-    return (
-      //*******************************
+const NavBar = ({ user }) => {
+  return (
+    //*******************************
 
-      /*
+    /*
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
         <Link className="navbar-brand font-weight-bold pr-5 mr-5" to="/">
           Developer.
@@ -54,81 +53,135 @@ class NavBar extends Component {
         </div>
       </nav>
     */
-      //*******************************
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-        <Link className="navbar-brand font-weight-bold pr-5 mr-5" to="/">
-          Developer.
-        </Link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    //*******************************
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <Link className="nav-item nav-link " to="/welcome">
-                Welcome
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link className="nav-item nav-link" to="/skillsChart">
-                Areas of Experience
-              </Link>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+    <nav className="navbar navbar-expand-lg navbar-light bg-light navBarBckg ">
+      <NavLink
+        className="navbar-brand font-weight-bold pr-5 mr-5 text-white"
+        to="/"
+      >
+        <sup>Samuel R.</sup>
+        <span>Software Developer</span>
+      </NavLink>
+
+      <button
+        className="navbar-toggler"
+        style={{
+          "background-color": "white",
+          opacity: "0.44",
+          border: "none"
+        }}
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-hidden="true"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
+            <NavLink className="nav-link text-white" to="/welcome">
+              Welcome<span className="sr-only">(current)</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link text-white" to="/skillsChart">
+              Areas of Experience
+            </NavLink>
+          </li>
+          <li className="nav-item dropdown">
+            <NavLink
+              className="nav-link dropdown-toggle text-white "
+              to="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="false"
+              aria-expanded="true"
+            >
+              Detailed skills
+            </NavLink>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <NavLink className="dropdown-item" to="/skillsIT">
+                I.T
+              </NavLink>
+              <div className="dropdown-divider"></div>
+              <NavLink className="dropdown-item" to="/skillsProject">
+                Project Management
+              </NavLink>
+              <div className="dropdown-divider"></div>
+              <NavLink className="dropdown-item" to="/skillsQuality">
+                Quality/ Certification
+              </NavLink>
+            </div>
+          </li>
+          <li className="nav-item">
+            {user && (
+              <NavLink
+                className="nav-link text-warning font-weight-bold "
+                to="/movies"
+                style={{ "font-size": "18px" }}
               >
-                Detailed skills
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link class="dropdown-item" to="/skillsIT">
-                  I.T
-                </Link>
-                <div class="dropdown-divider"></div>
-                <Link class="dropdown-item" to="/skillsProject">
-                  Project Management
-                </Link>
-
-                <Link class="dropdown-item" to="skillsQuality">
-                  Quality/ Certification
-                </Link>
-              </div>
-            </li>
-          </ul>
-          {/*
-          <form class="form-inline my-2 my-lg-0">
-            <div>
-              <Link
-                className="nav-item nav-link justify-content-end my-2 my-sm-0"
+                Submit a job Offers
+              </NavLink>
+            )}
+            {!user && (
+              <NavLink
+                className="nav-link text-warning font-weight-bold "
                 to="/login"
               >
+                <span> Submit a job Offers </span>
+                <sub>Login first >>> </sub>
+              </NavLink>
+            )}
+          </li>
+        </ul>
+        {//Conditional Rendering
+        !user && (
+          <React.Fragment>
+            <div className="form-inline my-2 my-lg-0">
+              <NavLink
+                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                to="/login"
+                style={{ "font-size": "20px" }}
+              >
                 Login
-              </Link>
+              </NavLink>
             </div>
-          </form>
-          */}
-        </div>
-      </nav>
+          </React.Fragment>
+        )}
+        {//Conditional Rendering
+        user && (
+          <React.Fragment>
+            <div className="form-inline my-2 my-lg-0">
+              <NavLink
+                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                to="/profile"
+                style={{ "font-size": "20px" }}
+              >
+                {user.sub}
+              </NavLink>
+              <NavLink
+                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                to="/logout"
+                style={{ "font-size": "20px" }}
+              >
+                Logout
+              </NavLink>
+            </div>
+          </React.Fragment>
+        )}
+      </div>
+    </nav>
 
-      //*******************************
-    );
-  }
-}
+    //*******************************
+  );
+};
 
 export default NavBar;

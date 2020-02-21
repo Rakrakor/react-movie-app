@@ -1,8 +1,9 @@
 {
   "apiUrl": "http://localhost:8080",
-  "login": "http://localhost:8080/login",
-  "signin": "http://localhost:8080/signin",
-  "skills": "http://localhost:8080/user/skills",
+  "authenticate": "http://localhost:8080/authenticate",
+  "register": "http://localhost:8080/register",
+
+  "skills": "http://localhost:8080/skills",
   "offers": "http://localhost:8080/user/offers",
   "save": "http://localhost:8080/user/saveNewOffer",
   "update": "http://localhost:8080/user/update",

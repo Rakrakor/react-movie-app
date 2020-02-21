@@ -135,6 +135,10 @@ class Movies extends Component {
       sortColumn,
       searchQuery
     } = this.state;
+
+    //*** ACCESS RIGHTS ***   USER Truthy/
+    const { user } = this.props;
+
     console.log("currentPage", currentPage);
     console.log("GenreList:", listGenres);
     const { length: nbMovies } = this.state.movies;

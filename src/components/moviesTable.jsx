@@ -9,9 +9,9 @@ class moviesTable extends Component {
       label: "TITLE",
       content: m => <Link to={`/movies/${m._id}`}>{m.title}</Link>
     },
-    { path: "genre.name", label: "GENRE" },
-    { path: "numberInStock", label: "STOCK" },
-    { path: "dailyRentalRate", label: "RATE" },
+    { path: "genre.name", label: "CONTRACT TYPE" },
+    { path: "numberInStock", label: "START DATE" },
+    { path: "dailyRentalRate", label: "SALARY" },
     {
       path: "thumb",
       label: "LIKE or NOT",

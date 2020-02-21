@@ -51,3 +51,13 @@ code {
   background-size: 100%;
 }
 */
+
+.navBarBckg {
+  background-image: url(./images/shutterstock_1317028097.jpg);
+  background-position: center center;
+  background-size: 120%;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
