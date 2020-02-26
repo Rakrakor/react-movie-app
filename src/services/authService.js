@@ -1,11 +1,12 @@
 import http from "./httpServices";
 //BI-directional dependencies authServie <=> HttpService
 import jwtDecode from "jwt-decode";
-import { authenticate } from "../configuration/config.json";
-import { register } from "../configuration/config.json";
-import { credentials } from "../configuration/config.json";
+import { apiUrl } from "../configuration/config.json";
 
-//const apiEndPoint = apiUrl + "/login";
+const apiURLauthentication = apiUrl + "/authenticate";
+const apiURLcredentials = apiUrl + "/usercredentials";
+const apiURLregister = apiUrl + "/register";
+
 const tokenKey = "token";
 const userRole = "roles";
 const jwt = localStorage.getItem(tokenKey);
@@ -15,7 +16,7 @@ const header = { headers: { Authorization: "Bearer " + jwt } };
 //http.setJwt(getJwt()); // getJwt() is called here directly instead of as a dependency in httpServices
 
 export async function login(username, userpassword) {
-  const { data: dataToken } = await http.post(authenticate, {
+  const { data: dataToken } = await http.post(apiURLauthentication, {
     username,
     userpassword
   });
@@ -30,7 +31,7 @@ export async function signin(
   phonenumber,
   usercompany
 ) {
-  http.post(register, {
+  http.post(apiURLregister, {
     username,
     userpassword,
     email,
@@ -60,7 +61,7 @@ export function getCurrentUser() {
 export async function getUserCredentials() {
   try {
     //const { data: roles } = await http.get(credentials, header);
-    const { data: userCreds } = await http.get(credentials, header);
+    const { data: userCreds } = await http.get(apiURLcredentials, header);
     console.log("UserCreds", userCreds);
     localStorage.setItem("roles", JSON.stringify(userCreds));
   } catch (e) {
