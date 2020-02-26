@@ -7,6 +7,10 @@ import Welcome from "./components/welcome";
 import RegisterForm from "./components/registerForm";
 import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
+import NewJobOfferForm from "./components/newJobOfferForm";
+import JobOfferEdit from "./components/jobOfferEdit";
+import JobOffer from "./components/jobOffer";
+
 import NewMovieForm from "./components/newMovieForm";
 import MovieForm from "./components/movieForm";
 import Movies from "./components/movies";
@@ -24,12 +28,19 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    user: ""
+    user: "",
+    roles: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const user = auth.getCurrentUser();
     this.setState({ user });
+
+    await auth.getUserCredentials();
+    const roles = auth.parseUserCredentials;
+    this.setState({ roles });
+    console.log("app.js ROLE:", this.state.roles);
+
     //Then component is re-render, and state passed to the props
   }
 
@@ -41,12 +52,23 @@ class App extends Component {
         <main className="container">
           <Switch>
             <Route path="/welcome" component={Welcome} />
-            <Route path="/movies/new" component={NewMovieForm} />
+            <Route path="/jobOffer/new" component={NewJobOfferForm} />
+            <Route path="/jobOffer/edit/:id" component={JobOfferEdit} />
+
             <Route path="/movies/:id" component={MovieForm} />
+
             <Route path="/login" component={LoginForm} />
             <Route path="/logout" component={Logout} />
             <Route path="/register" component={RegisterForm} />
-            <Route path="/movies" render={props => <Movies {...props} />} />
+
+            <Route
+              path="/jobOffers"
+              render={props => <JobOffer {...props} user={this.state.user} />}
+            />
+            <Route
+              path="/movies"
+              render={props => <Movies {...props} user={this.state.user} />}
+            />
             <Route path="/customers" component={Customers} />
             <Route path="/rentals" component={Rentals} />
             <Route path="/skillsChart" component={SkillsChart} />

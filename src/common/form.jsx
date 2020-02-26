@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Joi from "joi-browser";
 import Input from "./input";
 import DropDown from "./dropDown";
+import TextArea from "./textArea";
 
 class Form extends Component {
   state = {
@@ -84,19 +85,34 @@ class Form extends Component {
         name={name}
         value={data[name]}
         onChange={this.handleChange}
+        placeholder={type}
         errors={errors[name]}
       />
     );
   }
 
-  renderDropDown(name, label, genres) {
+  renderDropDown(name, label, listContractType) {
     const { data, errors } = this.state;
     return (
       <DropDown
         name={name}
         value={data[name]}
         inputLabel={label}
-        genres={genres}
+        listContractType={listContractType}
+        onChange={this.handleChange}
+        errors={errors[name]}
+      />
+    );
+  }
+
+  renderTextArea(name, label, type = "text") {
+    const { data, errors } = this.state;
+    return (
+      <TextArea
+        type={type}
+        inputLabel={label}
+        name={name}
+        value={data[name]}
         onChange={this.handleChange}
         errors={errors[name]}
       />

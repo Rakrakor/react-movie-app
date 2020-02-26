@@ -3,17 +3,17 @@ import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
 const Table = ({
-  filteredMoviesLength,
-  paginatedMovieList,
+  filteredJobListLength,
+  paginatedJobList,
   like,
-  deleteMovie,
+  deleteJobOffer,
   onSort,
   sortColumn,
   columns
 }) => {
   return (
     <React.Fragment>
-      <p>There are {filteredMoviesLength} in DB</p>
+      <p>You have captured {filteredJobListLength} job offers</p>
 
       <table className="table">
         <TableHeader
@@ -23,9 +23,9 @@ const Table = ({
         />
 
         <TableBody
-          data={paginatedMovieList}
+          data={paginatedJobList}
           like={like}
-          deleteMovie={deleteMovie}
+          deleteMovie={deleteJobOffer}
           columns={columns}
         />
       </table>

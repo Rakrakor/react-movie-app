@@ -1,15 +1,14 @@
 {
   "apiUrl": "http://localhost:8080",
+
   "authenticate": "http://localhost:8080/authenticate",
   "register": "http://localhost:8080/register",
+  "credentials": "http://localhost:8080/usercredentials",
 
   "skills": "http://localhost:8080/skills",
-  "offers": "http://localhost:8080/user/offers",
-  "save": "http://localhost:8080/user/saveNewOffer",
-  "update": "http://localhost:8080/user/update",
-  "delete": "http://localhost:8080/user/delete",
-  "userOffers": "http://localhost:8080/user/submittedOffers",
-
-  "general": "http://localhost:8080/admin",
+  "userListOffers": "http://localhost:8080/recruiter/submittedOffers",
+  "userSaveOffer": "http://localhost:8080/recruiter/saveNewOffer",
+  "userUpdateOffer": "http://localhost:8080/recruiter/update/",
+  "userDeleteOffer": "http://localhost:8080/recruiter/delete/",
   "adminOffers": "http://localhost:8080/admin/offers"
 }

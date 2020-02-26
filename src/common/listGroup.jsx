@@ -1,26 +1,31 @@
 import React from "react";
 
 const listGroup = ({
+  listContractType,
+  selectedContractType,
+  onSelectContract,
+
   listGenres,
   currentGenre,
   onSelectGenre,
+
   textProperty,
   valueProperty
 }) => {
-  console.log("Component_listGenres", listGenres);
+  console.log("Component_listContractType:", listContractType);
   return (
     <ul className="list-group">
-      {listGenres.map(genre => (
+      {listContractType.map(contract => (
         <li
-          key={genre[valueProperty]}
+          key={contract[valueProperty]}
           className={
-            genre === currentGenre
+            contract === selectedContractType
               ? "list-group-item active"
               : "list-group-item"
           }
-          onClick={() => onSelectGenre(genre)}
+          onClick={() => onSelectContract(contract)}
         >
-          {genre[textProperty]}
+          {contract[textProperty]}
         </li>
       ))}
     </ul>

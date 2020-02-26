@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../services/authService";
 
 /*NavLink allows to highlight the active class */
 
@@ -61,8 +62,11 @@ const NavBar = ({ user }) => {
         className="navbar-brand font-weight-bold pr-5 mr-5 text-white"
         to="/"
       >
-        <sup>Samuel R.</sup>
-        <span>Software Developer</span>
+        <i className="fa fa-home mr-2" aria-hidden="true"></i>
+
+        <span>
+          Recruit Samuel - <sub>Sw Developer</sub>
+        </span>
       </NavLink>
 
       <button
@@ -125,10 +129,19 @@ const NavBar = ({ user }) => {
             {user && (
               <NavLink
                 className="nav-link text-warning font-weight-bold "
-                to="/movies"
-                style={{ "font-size": "18px" }}
+                to="/jobOffer/new"
+                style={{ "font-size": "20px" }}
               >
-                Submit a job Offers
+                Submit a new Job Offer
+              </NavLink>
+            )}
+            {user && (
+              <NavLink
+                className="nav-link text-warning font-weight-bold "
+                to="/jobOffers"
+                style={{ "font-size": "15px" }}
+              >
+                Offers DashBoard
               </NavLink>
             )}
             {!user && (

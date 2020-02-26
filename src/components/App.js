@@ -1,7 +1,7 @@
 //************ 3rd party libraries
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+
 //************ Components
 import NavBar from "./components/navbar";
 import Products from "./components/products";
@@ -14,16 +14,6 @@ import NotFound from "./components/notFound";
 import "./App.css";
 
 class App extends Component {
-  state = {};
-
-  componentDidMOunt() {
-    //Install Tool: jwt-decode@2.2.0
-    const jwt = localStorage.getItem("token");
-    const user = jwtDecode(jwt);
-    console.log("Current User:", user);
-    console.log("Current User:");
-  }
-
   render() {
     return (
       <div>

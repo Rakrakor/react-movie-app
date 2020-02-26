@@ -43,7 +43,7 @@ class LoginForm extends Form {
       //pb: once logged in. We can still see the login button.
       //Need to do a full reaload of the APP. ( navBar componentDidMount, happens just once)
       //We need to reload again:
-      window.location = "/movies";
+      window.location = "/jobOffer/new";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };

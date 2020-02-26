@@ -1,15 +1,20 @@
 import React from "react";
 
-const DropDown = ({ name, inputLabel, genres, errors, ...rest }) => {
+const DropDown = ({ name, inputLabel, listContractType, errors, ...rest }) => {
+  console.log("DropDown- listContractType:", listContractType);
   return (
     <div className="form-group">
       <label htmlFor={name}>{inputLabel}</label>
 
       <select {...rest} id={name} name={name} className="form-control">
         <option value="" />
-        {genres.map(genre => (
-          <option key={genre._id} value={genre._id}>
-            {genre.name}
+        {listContractType.map(contractType => (
+          <option
+            key={contractType._id}
+            value={contractType._id}
+            select={contractType.selected}
+          >
+            {contractType.name}
           </option>
         ))}
       </select>
