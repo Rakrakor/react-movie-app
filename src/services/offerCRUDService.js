@@ -1,6 +1,19 @@
 import http from "./httpServices";
 import { apiUrl } from "../configuration/config.json";
 
+const apiURLuserSkills = apiUrl + "/skills";
+export async function skills() {
+  //Observer le contenu console et renvoyer une varaible adequate via cette fonction
+  try {
+    const { data: respSkills } = await http.get(apiURLuserSkills, header);
+    console.log(respSkills);
+
+    return respSkills;
+  } catch (e) {
+    return null;
+  }
+}
+
 const apiURLuserListOffers = apiUrl + "/recruiter/submittedOffers";
 const apiURLuserFindAnOffer = apiUrl + "/recruiter/findOffer/";
 const apiURLuserSaveOffer = apiUrl + "/recruiter/saveNewOffer";
@@ -112,5 +125,6 @@ export default {
   userSaveOffer,
   updateOffer,
   deleteOffer,
-  listAdminOffers
+  listAdminOffers,
+  skills
 };

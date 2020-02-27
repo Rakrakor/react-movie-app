@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import crud from "../services/offerCRUDService";
 
 class Welcome extends Component {
-  state = {};
+  state = {
+    skills: []
+  };
+
+  async componentDidMount() {
+    this.setState({ skills: await crud.skills() });
+  }
+
   render() {
     return (
       <div
         className="developer container rounded bg-light opaque"
         style={{ height: "400px", "margin-top": "100px" }}
       >
+        {this.skills.map(skill => (
+          <span key={skill.id}>
+            {skill.title}
+            {skill.description}
+            {skill.duration}
+          </span>
+        ))}
         <div className="align-top" style={{ height: "150px" }}></div>
 
         <div
