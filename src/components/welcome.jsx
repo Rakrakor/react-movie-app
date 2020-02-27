@@ -17,13 +17,6 @@ class Welcome extends Component {
         className="developer container rounded bg-light opaque"
         style={{ height: "400px", "margin-top": "100px" }}
       >
-        {this.skills.map(skill => (
-          <span key={skill.id}>
-            {skill.title}
-            {skill.description}
-            {skill.duration}
-          </span>
-        ))}
         <div className="align-top" style={{ height: "150px" }}></div>
 
         <div
