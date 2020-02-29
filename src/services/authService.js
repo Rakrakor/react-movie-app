@@ -21,8 +21,7 @@ export async function login(username, userpassword) {
     userpassword
   });
   console.log("dataToken:", dataToken);
-  //localStorage.setItem(tokenKey, dataToken.jwt);
-  localStorage.setItem(tokenKey, dataToken);
+  localStorage.setItem(tokenKey, dataToken.jwt);
 }
 
 export async function signin(
