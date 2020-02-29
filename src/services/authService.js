@@ -16,7 +16,7 @@ const header = { headers: { Authorization: "Bearer " + jwt } };
 //http.setJwt(getJwt()); // getJwt() is called here directly instead of as a dependency in httpServices
 
 export async function login(username, userpassword) {
-  const { data: dataToken } = await http.post(apiURLauthentication, {
+  const { data: dataToken } = await http.get(apiURLauthentication, {
     username,
     userpassword
   });
