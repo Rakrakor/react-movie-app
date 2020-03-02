@@ -223,8 +223,8 @@ class JobOffer extends Component {
 
     return (
       <div>
-        <div className="row bg-light">
-          <div className="col-3">
+        <div className="w3-row bg-light">
+          <div className="w3-container w3-third">
             <ListGroup
               listContractType={listContractType}
               selectedContractType={selectedContractType}
@@ -232,9 +232,9 @@ class JobOffer extends Component {
             />
           </div>
 
-          <div className="col">
-            <Link className="btn btn-primary mb-5" to="/jobOffer/new">
-              "New Job Offer"
+          <div className="w3-container w3-twothird">
+            <Link className="btn btn-primary mb-3" to="/jobOffer/new">
+              "Submit another Job Offer"
             </Link>
 
             <SearchBox value={searchQuery} onChange={this.handleSearch} />
