@@ -10,10 +10,10 @@ class jobOfferTable extends Component {
       content: j => <Link to={`/jobOffer/edit/${j.id}`}>{j.title}</Link>
     },
     /*{ path: "description", label: "DESCRIPTION" },*/
-    { path: "contractType", label: "CONTRACT TYPE" },
+    { path: "contractType", label: "CONTRACT" }
 
-    { path: "startDate", label: "START DATE" },
-    { path: "wages", label: "SALARY" },
+    /*{ path: "startDate", label: "START DATE" },
+    { path: "wages", label: "SALARY" },*/
     /*
     {
       path: "thumb",
