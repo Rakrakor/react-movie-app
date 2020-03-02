@@ -41,7 +41,12 @@ class NewMovieForm extends Form {
     startDate: Joi.string()
       .regex(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)
       .required()
-      .label("Start Date"),
+      .label("Start Date")
+      .error(() => {
+        return {
+          message: "Format must be YYYY-MM-DD"
+        };
+      }),
     wages: Joi.number()
       .integer()
       .required()
