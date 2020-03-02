@@ -1,5 +1,7 @@
 {
-  "apiUrl": "http://localhost:8080",
+  "apiUrl____HEROKU": "https://sr-cv-backend.herokuapp.com",
+
+  "apiUrl____LOCAL": "http://localhost:8080",
 
   "authenticate": "http://localhost:8080/authenticate",
   "register": "http://localhost:8080/register",
