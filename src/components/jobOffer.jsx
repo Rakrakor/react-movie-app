@@ -225,21 +225,36 @@ class JobOffer extends Component {
       <div className="w3-content">
         <div className="w3-row-padding bg-light">
           <div className="w3-container w3-third mt-3 mb-3">
-            <Link className="btn btn-primary mt-3 mb-3" to="/jobOffer/new">
-              "Submit another Job Offer"
-            </Link>
-            <h3 className="mt-1 mtb-1">--- Filters ---</h3>
+            <h3
+              className="mt-1 mtb-1"
+              style={{ "text-align": "center", "font-weight": "bold" }}
+            >
+              {" "}
+              Filters{" "}
+            </h3>
             <ListGroup
               listContractType={listContractType}
               selectedContractType={selectedContractType}
               onSelectContract={this.handleContract}
             />
-            <h3 className="mt-1 mtb-1">--- Search ---</h3>
+            <h3
+              className="mt-1 mtb-1"
+              style={{ "text-align": "center", "font-weight": "bold" }}
+            >
+              {" "}
+              Search{" "}
+            </h3>
             <SearchBox value={searchQuery} onChange={this.handleSearch} />
           </div>
 
           <div className="w3-container w3-twothird mt-3 mb-3">
-            <h3 className="mt-1 mtb-1">--- My list of offers ---</h3>
+            <h3
+              className="mt-1 mtb-1"
+              style={{ "text-align": "center", "font-weight": "bold" }}
+            >
+              {" "}
+              My list of offers{" "}
+            </h3>
 
             <JobOfferTable
               filteredJobListLength={filteredJobListLength}
