@@ -9,6 +9,8 @@ const ProgressBar = ({ name, level }) => {
   } else {
     classLevel = ["text-left progress-bar bg-success w-" + level];
   }
+  //remove if you want different colors for different levels
+  classLevel = "text-left progress-bar bg-info w-";
 
   // const classLevel = ["progress-bar bg-success w-" + level];
   const objStyle = { width: level + "%" };
