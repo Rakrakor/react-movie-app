@@ -222,22 +222,24 @@ class JobOffer extends Component {
     const { filteredJobListLength, paginatedJobList } = this.getPageData();
 
     return (
-      <div>
-        <div className="w3-row bg-light">
-          <div className="w3-container w3-third">
+      <div className="w3-content">
+        <div className="w3-row-padding bg-light">
+          <div className="w3-container w3-third mt-3 mb-3">
+            <Link className="btn btn-primary mt-3 mb-3" to="/jobOffer/new">
+              "Submit another Job Offer"
+            </Link>
+            <h3 className="mt-1 mtb-1">--- Filters ---</h3>
             <ListGroup
               listContractType={listContractType}
               selectedContractType={selectedContractType}
               onSelectContract={this.handleContract}
             />
+            <h3 className="mt-1 mtb-1">--- Search ---</h3>
+            <SearchBox value={searchQuery} onChange={this.handleSearch} />
           </div>
 
-          <div className="w3-container w3-twothird">
-            <Link className="btn btn-primary mb-3" to="/jobOffer/new">
-              "Submit another Job Offer"
-            </Link>
-
-            <SearchBox value={searchQuery} onChange={this.handleSearch} />
+          <div className="w3-container w3-twothird mt-3 mb-3">
+            <h3 className="mt-1 mtb-1">--- My list of offers ---</h3>
 
             <JobOfferTable
               filteredJobListLength={filteredJobListLength}
