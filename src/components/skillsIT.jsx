@@ -3,7 +3,9 @@ import ProgressBar from "./progressBar";
 
 class SkillsIT extends Component {
   skillsLevels = [
-    { skill: "AWS", level: "24" },
+    { skill: "AWS", level: "20" },
+    { skill: "Heroku", level: "25" },
+    { skill: "Git", level: "35" },
     { skill: "React", level: "24" },
     { skill: "Java8", level: "30" },
     { skill: "Java7", level: "75" },
@@ -11,7 +13,7 @@ class SkillsIT extends Component {
     { skill: "SpringBoot", level: "40" },
     { skill: "SpringSecurity", level: "25" },
     { skill: "JPA Hibernate", level: "60" },
-    { skill: "MySQL", level: "70" }
+    { skill: "MySQL", level: "65" }
   ];
 
   render() {

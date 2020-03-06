@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-import auth from "../services/authService";
 
 /*NavLink allows to highlight the active class */
 
@@ -141,7 +140,7 @@ const NavBar = ({ user }) => {
                 to="/jobOffers"
                 style={{ "font-size": "15px" }}
               >
-                Offers DashBoard
+                Offer DashBoard
               </NavLink>
             )}
             {!user && (
@@ -175,11 +174,12 @@ const NavBar = ({ user }) => {
             <div className="form-inline my-2 my-lg-0">
               <NavLink
                 className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
-                to="/profile"
+                to="/user/edit"
                 style={{ "font-size": "20px" }}
               >
                 {user.sub}
               </NavLink>
+
               <NavLink
                 className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
                 to="/logout"

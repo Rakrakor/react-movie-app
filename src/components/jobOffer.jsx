@@ -46,6 +46,7 @@ class JobOffer extends Component {
     console.log("Roles after Parse:", roles);
 
     if (
+      roles !== null &&
       roles[0] &&
       roles[1] &&
       (roles[0].authority === "ADMIN" || roles[1].authority === "ADMIN")
@@ -54,12 +55,12 @@ class JobOffer extends Component {
       console.log("roles.authority:", roles[1].authority);
       console.log("FILTER for ADMIN -2 choices");
       this.setState({ listOffers: await offerServe.listAdminOffers() });
-    } else if (roles[0] && roles[0].authority === "ADMIN") {
+    } else if (roles !== null && roles[0] && roles[0].authority === "ADMIN") {
       console.log("FILTER for ADMIN - 1 choice");
       console.log("roles.authority:", roles[0].authority);
       this.setState({ listOffers: await offerServe.listAdminOffers() });
     } else {
-      console.log("roles.authority:", roles[0].authority);
+      //console.log("roles.authority:", roles[0].authority);
       console.log("FILTER for USER");
       this.setState({ listOffers: await offerServe.listUserOffers() });
     }

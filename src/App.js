@@ -9,6 +9,7 @@ import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
 import NewJobOfferForm from "./components/newJobOfferForm";
 import JobOfferEdit from "./components/jobOfferEdit";
+import UserEdit from "./components/userEdit";
 import JobOffer from "./components/jobOffer";
 
 import NewMovieForm from "./components/newMovieForm";
@@ -44,6 +45,10 @@ class App extends Component {
     //Then component is re-render, and state passed to the props
   }
 
+  triggerChildScroll() {
+    this.refs.child.triggerScroll();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -54,6 +59,7 @@ class App extends Component {
             <Route path="/welcome" component={Welcome} />
             <Route path="/jobOffer/new" component={NewJobOfferForm} />
             <Route path="/jobOffer/edit/:id" component={JobOfferEdit} />
+            <Route path="/user/edit" component={UserEdit} />
 
             <Route path="/movies/:id" component={MovieForm} />
 

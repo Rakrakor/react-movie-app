@@ -5,7 +5,7 @@ const apiURLuserSkills = apiUrl + "/skills";
 export async function skills() {
   //Observer le contenu console et renvoyer une varaible adequate via cette fonction
   try {
-    const { data: respSkills } = await http.get(apiURLuserSkills, header);
+    const { data: respSkills } = await http.get(apiURLuserSkills);
     console.log(respSkills);
 
     return respSkills;

@@ -81,13 +81,11 @@ class JobOfferEdit extends Form {
     /*
     const genres = getGenres();
     this.setState({ genres });
-
     //reccuperation de l'URI "/new"
     const movieId = this.props.match.params.id;
     if (movieId !== "new") {
       return;
     }
-
     //if movie is not new and exists:
     const movie = getMovie(movieId);
     if (!movie) {
@@ -96,12 +94,10 @@ class JobOfferEdit extends Form {
       //a wrong page
       return this.props.history.replace("/not-found");
     }
-
     // *** RULE ***: the element we get from the serve,
     // is adapted to another model matching the view (i.e genreId)
     this.setState({ data: this.mapToViewModel(movie) });
   }
-
   mapToViewModel(movie) {
     return {
       _id: movie._id,
