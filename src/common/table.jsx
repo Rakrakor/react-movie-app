@@ -14,6 +14,7 @@ const Table = ({
   return (
     <React.Fragment>
       <p>You have captured {filteredJobListLength} job offers</p>
+      
 
       <table className="table">
         <TableHeader
@@ -25,7 +26,7 @@ const Table = ({
         <TableBody
           data={paginatedJobList}
           like={like}
-          deleteMovie={deleteJobOffer}
+          delete={deleteJobOffer}
           columns={columns}
         />
       </table>

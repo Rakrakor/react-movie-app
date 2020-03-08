@@ -32,7 +32,7 @@ class Welcome extends Component {
           >
             {/*https://create-react-app.dev/docs/using-the-public-folder/ */}
             <a
-              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton14CA.pdf"}
+              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton15CA.pdf"}
               target="_blank"
             >
               Download Resume
