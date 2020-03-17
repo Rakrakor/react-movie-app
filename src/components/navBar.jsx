@@ -57,16 +57,20 @@ const NavBar = ({ user }) => {
     //*******************************
 
     <nav className="navbar navbar-expand-lg navbar-light bg-light navBarBckg ">
-      <NavLink
+      <a
         className="navbar-brand font-weight-bold pr-5 mr-5 text-white"
-        to="/"
+        href="mailto:samuel.rakoton@gmail.com?subject=Developer needed!"
       >
-        <i className="fa fa-home mr-2" aria-hidden="true"></i>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
 
         <span>
-          Recruit Samuel - <sub>Sw Developer</sub>
+          {" "}
+          Contact Samuel{" "}
+          <sub>
+            <h6>Sw Developer</h6>
+          </sub>
         </span>
-      </NavLink>
+      </a>
 
       <button
         className="navbar-toggler"
