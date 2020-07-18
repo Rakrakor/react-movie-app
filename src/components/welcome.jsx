@@ -4,7 +4,7 @@ import crud from "../services/offerCRUDService";
 
 class Welcome extends Component {
   state = {
-    skills: []
+    skills: [],
   };
 
   async componentDidMount() {
@@ -32,7 +32,7 @@ class Welcome extends Component {
           >
             {/*https://create-react-app.dev/docs/using-the-public-folder/ */}
             <a
-              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton15CA.pdf"}
+              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton_MTL.pdf"}
               target="_blank"
             >
               Download Resume
