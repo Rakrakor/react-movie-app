@@ -77,7 +77,7 @@ const NavBar = ({ user }) => {
         style={{
           "background-color": "white",
           opacity: "0.44",
-          border: "none"
+          border: "none",
         }}
         type="button"
         data-toggle="collapse"
@@ -158,42 +158,46 @@ const NavBar = ({ user }) => {
             )}
           </li>
         </ul>
-        {//Conditional Rendering
-        !user && (
-          <React.Fragment>
-            <div className="form-inline my-2 my-lg-0">
-              <NavLink
-                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
-                to="/login"
-                style={{ "font-size": "20px" }}
-              >
-                Login
-              </NavLink>
-            </div>
-          </React.Fragment>
-        )}
-        {//Conditional Rendering
-        user && (
-          <React.Fragment>
-            <div className="form-inline my-2 my-lg-0">
-              <NavLink
-                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
-                to="/user/edit"
-                style={{ "font-size": "20px" }}
-              >
-                {user.sub}
-              </NavLink>
+        {
+          //Conditional Rendering
+          !user && (
+            <React.Fragment>
+              <div className="form-inline my-2 my-lg-0">
+                <NavLink
+                  className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                  to="/login"
+                  style={{ "font-size": "20px" }}
+                >
+                  Login
+                </NavLink>
+              </div>
+            </React.Fragment>
+          )
+        }
+        {
+          //Conditional Rendering
+          user && (
+            <React.Fragment>
+              <div className="form-inline my-2 my-lg-0">
+                <NavLink
+                  className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                  to="/user/edit"
+                  style={{ "font-size": "20px" }}
+                >
+                  {user.sub}
+                </NavLink>
 
-              <NavLink
-                className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
-                to="/logout"
-                style={{ "font-size": "20px" }}
-              >
-                Logout
-              </NavLink>
-            </div>
-          </React.Fragment>
-        )}
+                <NavLink
+                  className=" nav-link justify-content-end my-2 my-sm-0 font-weight-bold"
+                  to="/logout"
+                  style={{ "font-size": "20px" }}
+                >
+                  Logout
+                </NavLink>
+              </div>
+            </React.Fragment>
+          )
+        }
       </div>
     </nav>
 

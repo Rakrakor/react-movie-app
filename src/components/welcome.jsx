@@ -23,7 +23,7 @@ class Welcome extends Component {
             className="w3-third w3-container align-middle text-black font-weight-bold"
             style={{ "font-size": "50px", "text-align": "center" }}
           >
-            Jr Java Developer
+            Python, Java Developer
           </div>
 
           <div
@@ -32,7 +32,7 @@ class Welcome extends Component {
           >
             {/*https://create-react-app.dev/docs/using-the-public-folder/ */}
             <a
-              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton_MTL.pdf"}
+              href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton_IT_MTL.pdf"}
               target="_blank"
             >
               Download Resume
