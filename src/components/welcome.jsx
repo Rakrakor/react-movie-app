@@ -31,10 +31,15 @@ class Welcome extends Component {
             style={{ height: "100px", "text-align": "center" }}
           >
             {/*https://create-react-app.dev/docs/using-the-public-folder/ */}
-            <a
+            {/*<a
               href={process.env.PUBLIC_URL + "/CV_Samuel_Rakoton_IT_MTL.pdf"}
               target="_blank"
             >
+            */}
+            <a
+              href="https://s3.ca-central-1.amazonaws.com/samuel.rakoton.cv/CV_Samuel_Rakoton_IT.pdf" 
+              target="_blank"
+            >  
               Download Resume
             </a>
           </div>
